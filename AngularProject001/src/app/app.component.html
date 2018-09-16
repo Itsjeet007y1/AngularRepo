@@ -1,0 +1,48 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<h1 style="color: green;">Welcome to {{ title }}!</h1>
+<p>Faculty : {{faculty}}</p>
+<p>
+	Duration: <span [ngSwitch]="duration"> <span *ngSwitchCase="1">One
+			Day</span> <span *ngSwitchCase="7">Seven Days</span> <span
+		*ngSwitchCase="10">Ten Days</span> <span *ngSwitchCase="30">One
+			Month</span> <span *ngSwitchDefault>Please Enter the Required value
+			!!!</span>
+	</span>
+<p>
+	Available or Not? <span
+		*ngIf="facultyAvailability; then available else notAvailable">He
+		is available right now !!</span>
+	<ng-template #available>He is available to teach</ng-template>
+	<ng-template #notAvailable>He is currently not available
+	to teach</ng-template>
+
+	<ng-template #forEmptCol>
+	<td></td>
+	</ng-template>
+
+	<br> <span>Related Courses:</span>
+<ul *ngFor="let rc of relatedCourses; let ind = index">
+	<li>{{ind +1}} - {{rc}}</li>
+</ul>
+<p>Supporting Employees:</p>
+<table [border]="1">
+	<tr>
+		<th>Selected</th>
+		<th>Id</th>
+		<th>Name</th>
+		<th>Salary</th>
+		<th>Type</th>
+	</tr>
+	<tr *ngFor="let emp of supportingEmployees">
+		<td *ngIf="selectedSupportingEmployee == emp else forEmptCol">*</td>
+		<td>{{emp.Id}}</td>
+		<td>{{emp.Name | uppercase}}</td>
+		<td>{{emp.Salary}}</td>
+		<td><span [ngSwitch]="emp.Type"> <span *ngSwitchCase="0">Temporary</span>
+				<span *ngSwitchCase="1">Permanent</span> <span *ngSwitchCase="2">Contract</span>
+				<span *ngSwitchDefault>Invalid</span>
+		</span></td>
+	</tr>
+</table>
+
+
