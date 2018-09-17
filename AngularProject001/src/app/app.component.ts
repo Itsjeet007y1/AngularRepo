@@ -7,7 +7,7 @@ import { Employee, EmployeeType } from './Employee';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Angular 4 App !!';
+  title = 'Angular 4 Application !!';
   faculty = 'Jitendra Kumar';
   duration = 300;
   facultyAvailability = true;
