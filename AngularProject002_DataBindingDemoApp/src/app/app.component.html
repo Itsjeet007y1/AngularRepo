@@ -10,8 +10,22 @@
 	Title : {{evilTitle}}<br><br>
 	<span [innerHTML]="evilTitle"></span><br><br>
 	<input type = "button" (click) = "onClick()" value = "Hit me..."/>
-	<button on-click = "onClick()" >Hit me...</button>
-	<img src="../assets/images/smiley1.png">
+	<button on-click = "onClick()" >Hit me...</button><br><br>
+	<img src="../assets/images/smiley1.png" (mouseover)="onMouse($event)" 
+	(mouseout)="onMouse($event)" width="50" height="50">
+	<br><br>
+	Event Type : {{eventType}}
+	<hr>
+	<input type = "text" (keyup)="onKey($event)"/><br><br>
+	KeyPressed = {{keys}}
+	Value = {{value}}
+	<hr>
+	<input #text1 (keyup.enter)="0" (keyup)="onKey1(text1.value)"><br>
+	<br>
+	<p>{{text1.value}}</p>
 </form>
+<hr>
+	<app-person></app-person>
+<hr>
 
 
