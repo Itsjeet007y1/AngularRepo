@@ -6,8 +6,10 @@
 </head>
 <body>
 	<form action="">
-		First Name: <input type = "text" [value] = "person.firstName"/><br><br>
-		Last Name: <input type = "text" [value] = "person.lastName"/><br>
+		First Name: <input type = "text" #firstName [value] = "person.firstName" (input)="person.firstName = firstName.value"/><br><br>
+		Last Name: <input type = "text" [value] = "person.lastName" (input)="person.lastName = $event.target.value"/><br>
+		<br><br>
+		Hello: {{person.firstName+" "+person.lastName}}
 	</form>
 </body>
 </html>
