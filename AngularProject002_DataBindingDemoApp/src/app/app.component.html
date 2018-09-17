@@ -1,5 +1,17 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <h1 style="color: green;">Welcome to {{ title }}!</h1>
-
+<form>
+	<input type = 'text' value = "{{developerName}}"/><br><br> <!-- Interpolation -->
+	<input type = 'text' [value] = "developerName"/><br><br> <!-- One way binding -->
+	<input type = "text" bind-value = "developerName"/><br><br> <!-- bind syntax -->
+	<input type = 'button' value = "Sample" [disabled] = "!isModified"/><br><br>
+	<input type = 'button' value = 'Sample' disabled/>
+	<hr/>
+	Title : {{evilTitle}}<br><br>
+	<span [innerHTML]="evilTitle"></span><br><br>
+	<input type = "button" (click) = "onClick()" value = "Hit me..."/>
+	<button on-click = "onClick()" >Hit me...</button>
+	<img src="../assets/images/smiley1.png">
+</form>
 
 

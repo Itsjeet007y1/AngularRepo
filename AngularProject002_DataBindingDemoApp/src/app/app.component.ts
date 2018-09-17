@@ -8,4 +8,10 @@ import { Employee, EmployeeType } from './Employee';
 })
 export class AppComponent {
   title = 'Angular 4 Application !!';
+  developerName = 'Jitendra Kumar';
+  isModified = true;
+  evilTitle = '<script>alert("evil never sleeps")</script>';
+  onClick() {
+    alert('Button Clicked');
+  }
 }
