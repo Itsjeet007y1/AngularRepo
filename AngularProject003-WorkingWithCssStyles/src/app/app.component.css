@@ -1,0 +1,18 @@
+.yellowBorder {
+	border: solid 2px yellow;
+}
+.redBackGround {
+	background-color: red;
+}
+.yellowBackGround {
+	background-color: yellow;
+}
+.saveable {
+	font-style: italic;
+}
+.modified {
+	font-weight: bold;
+}
+.special {
+	font-size: 24px;
+}

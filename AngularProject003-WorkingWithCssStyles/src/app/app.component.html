@@ -1,4 +1,18 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <h1 style="color: green;">Welcome to {{ title }}!</h1>
-
-
+<hr>
+<div [style.color] = "textColor">This is text with red color!!</div>
+<div [style.color] = "textColor" [style.background-color] = "bgColor1">This is red text with yellow background !!</div>
+<div [style.color] = "textColor" [style.background-color] = "bgColor2">This is Red text with green background !!</div>
+<hr>
+	<button [style.color] = "isSpecial ? 'red' : 'green'">Red</button>
+	<button [style.background-color] = "canSave ? 'cyan' : 'grey'">Save</button>
+	<button [style.font-size.em] = "isSpecial ? '3' : '1'">Big</button>
+	<button [style.font-size.px] = "!isSpecial ? '150' : '10'">Small</button>
+<hr>
+	<div class = "redBackGround">This is red back grounded text!</div>
+	<div [class] = "yellowBG">This is the text with yellow Back ground !!</div>
+	<div [class] = "'redBackGround'">This is also red back ground text !</div>
+<hr>
+	<div class = "saveable special">Some sample text!!</div>
+	<div [ngClass] = "setClasses()">Some sample text using ngClass directive !!</div>

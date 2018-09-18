@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Angular 4 Application !!';
+  textColor = 'red';
+  bgColor1 = 'yellow';
+  bgColor2 = 'Green';
+  isSpecial = true;
+  canSave = true;
+  yellowBG = 'yellowBackGround';
+  setClasses()  {
+    const classes = { saveable: true, special: true };
+    return classes;
+  }
 }
