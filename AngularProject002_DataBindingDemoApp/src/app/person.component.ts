@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Person } from './Person';
 
 @Component({
@@ -6,5 +6,10 @@ import { Person } from './Person';
   templateUrl: './person.component.html',
 })
 export class PersonComponent {
+  @Input() firstName: string;
+  @Input() lastName: string;
   person: Person = new Person('Jitendra', 'Kumar');
+  changeToUpperCase(value: string): string {
+    return value.toUpperCase();
+  }
 }

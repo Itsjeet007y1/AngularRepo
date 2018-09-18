@@ -8,8 +8,23 @@
 	<form action="">
 		First Name: <input type = "text" #firstName [value] = "person.firstName" (input)="person.firstName = firstName.value"/><br><br>
 		Last Name: <input type = "text" [value] = "person.lastName" (input)="person.lastName = $event.target.value"/><br>
-		<br><br>
+		<br>
 		Hello: {{person.firstName+" "+person.lastName}}
+	</form>
+	<hr><br><br>
+	<form action="" name = "form1">
+		first Name: <input name = "firstName"  type = "text" [(ngModel)] = "person.firstName"/><br><br>
+		Last Name: <input name = "lastName" type = "text" (ngModel) = "person.lastName" (ngModelChange) = "person.lastName=changeToUpperCase($event)"/>
+		<br>
+		Employee Details : {{person.firstName + ' ' + person.lastName}}
+	</form>
+	<hr>
+	<!-- for @Input -->
+	<form action="" name = "form1">
+		first Name: <input name = "firstName"  type = "text" (ngModel) = "firstName"/><br><br>
+		Last Name: <input name = "lastName" type = "text" (ngModel) = "lastName"/>
+		<br>
+		Employee Details : {{person.firstName + ' ' + person.lastName}}
 	</form>
 </body>
 </html>
