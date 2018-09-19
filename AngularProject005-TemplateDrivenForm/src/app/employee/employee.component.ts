@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Employee } from '../Employee';
+import { Employee } from './Employee';
 
 @Component({
   selector: 'app-employee',
@@ -9,7 +9,9 @@ import { Employee } from '../Employee';
 export class EmployeeComponent implements OnInit {
 
   constructor() { }
-
+  departments = ['Sales', 'Development', 'Training', 'Accounts', 'Engineering'];
+  emp: Employee = new Employee(101, '', 10000, 'Engineering');
+  get diagnotics() { return JSON.stringify(this.emp); }
   ngOnInit() {
   }
 

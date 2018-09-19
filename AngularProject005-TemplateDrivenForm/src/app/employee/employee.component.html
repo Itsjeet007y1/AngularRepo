@@ -1,3 +1,37 @@
-<p>
-  employee works!
-</p>
+<div class = "container">
+	<div class = "panel panel-info">
+		<div class = "panel-heading">
+			<h1>Employee Form</h1>
+		</div>
+		<div class = "panel-body">
+			<form action="" name = "frmEmployee">
+				<div class = "form-group">
+					<label for = "id" class = "control-label">ID</label>
+					<input type = "text" class = "form-control" id = "id" name = "id" [(ngModel)] = "emp.id" required>
+				</div>
+				<div class = "form-group">
+					<label for = "name" class = "control-label">NAME</label>
+					<input type = "text" #empName = "ngModel" class = "form-control" id= "name" name = "name" [(ngModel)] = "emp.name" required pattern = "[a-zA-Z0-9 ]+">
+					<div class = "alert alert-danger" [hidden]="empName.valid || empName.pristine || !empName.errors.required">
+						Name is required !!
+					</div>
+					<div class = "alert alert-danger" [hidden]="empName.valid || empName.pristine || !empName.errors.pattern">
+						Name can not have special characters !!
+					</div>
+				</div>
+				<div class = "form-group">
+					<label for = "salary" class = "control-label">SALARY</label>
+					<input type = "text" class = "form-control" id = "salary" name = "salary" [(ngModel)] = "emp.salary" required>
+				</div>
+				<div class = "form-group">
+					<label for = "dept" class = "control-label">DEPARTMENT</label>
+					<select class = "form-control" id = "dept" name = "department" [(ngModel)] = "emp.department" required>
+						<option *ngFor="let dept of departments">{{dept}}</option>
+					</select>
+				</div>
+				<hr>
+				Employee: {{diagnotics}}
+			</form>
+		</div>
+	</div>
+</div>
