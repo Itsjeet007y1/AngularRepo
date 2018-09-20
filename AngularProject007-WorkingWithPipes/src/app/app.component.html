@@ -1,2 +1,47 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<h1 style="color: green;">Welcome to {{ title }}!</h1>
+<h1 style="color: green;">Angular Project to {{ title | uppercase }}!</h1>
+<hr>
+<h3>Date related pipe:</h3>
+Date: {{todaysDate}}<br>
+Date: {{todaysDate | date}}<br>
+Date in short: {{todaysDate | date:'short'}}<br>
+Date in Medium: {{todaysDate | date:'medium'}}<br>
+Date in Full: {{todaysDate | date:'full'}}<br>
+Date : {{todaysDate | age}}<br>
+<h3>Time related pipes:</h3>
+Present time(medium): {{todaysDate | date:'mediumTime'}}<br>
+Present time(short): {{todaysDate | date:'shortTime'}}<br>
+<hr>
+<h3>Decimal Pipe</h3>
+Decimal Number: {{decimalNumber}}<br>
+Decimal Number: {{decimalNumber | number}}<br>
+Decimal Number: {{decimalNumber | number:'4.3-5'}}<br>
+Decimal Number: {{decimalNumber | number:'3.8-10'}}<br>
+<h3>Currency Pipe</h3>
+<hr>
+Salary: {{salary}}<br>
+Salary: {{salary | currency}}<br>
+Salary: {{salary | currency:'EUR':true}}<br>
+Salary: {{salary | currency:'INR':true}}<br>
+Salary: {{salary | currency:'INR':false}}<br>
+Salary: {{salary | currency:'INR':false:'6.3-5'}}<br>
+<h3>Percent Pipe</h3>
+<hr>
+Percentage: {{myPercentage}}<br>
+Percentage: {{myPercentage | percent}}<br>
+Percentage: {{myPercentage | percent:'3.2-3'}}<br>
+<h3>Slice Pipe</h3>
+<hr>
+Numbers: {{numbers}}<br>
+Numbers: {{numbers | slice:3}}<br>
+Numbers: {{numbers | slice:-3}}<br>
+Numbers: {{numbers | slice:2:4}}<br>
+<h3>JSON Pipe</h3>
+<hr>
+Employee object: {{obj | json}}
+<h3>Pure and impure Pipe Illustration</h3>
+<hr>
+<input type = "text" #txtName/>
+<button (click) = "addItem(txtName.value)">Add Item</button>
+<br>
+Array: {{arr | join}}
