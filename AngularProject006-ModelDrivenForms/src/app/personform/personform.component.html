@@ -1,0 +1,42 @@
+<div>{{message}}</div>
+<form [formGroup]="personForm" novalidate (ngSubmit) = "onSubmit()">
+	<div class = "form-group">
+		<label>First Name</label>
+		<input type = "text" class = "form-control" name = "firstName" formControlName="firstName" required/><br>
+		<div class = "control-label" *ngIf="firstName.errors && (firstName.dirty || firstName.touched)">
+			<p style = "color:red;" *ngIf="firstName.errors.required">First Name is required !!</p>
+			<p style = "color:red;" *ngIf="firstName.errors.pattern">First Name can not contain special characters !!</p>
+		</div>
+		<ul>
+			<li *ngFor="let c of changes">{{c}}</li>
+		</ul>
+	</div>
+	<div class = "form-group">
+		<label>Last Name</label>
+		<input type = "text" class = "form-control" name = "lastName" formControlName = "lastName" required/><br>
+		<div class = "control-label" *ngIf="lastName.errors && (lastName.dirty || lastName.touched)">
+			<p style = "color:red;" *ngIf="lastName.errors.required">Last Name is required !!</p>
+			<p style = "color:red;" *ngIf="lastName.errors.pattern">Last Name can not contain special characters !!</p>
+		</div>
+	</div>
+	<div class = "form-group">
+		<label>Gender</label>
+		<input type = "radio" name = "gender" formControlName = "gender" value = "male" required/> Male
+		<input type = "radio" name = "gender" formControlName = "gender" value = "female" required/> Female
+	</div>
+	<div class = "form-group">
+		<label>Qualification</label>
+		<select class = "form-control" formControlName = "qualification">
+			<option *ngFor="let deg of degrees" [value]="deg">{{deg}}</option>
+		</select>
+	</div>
+	<input type = "submit" value = "Submit" class = "btn btn-info" [disabled]="personForm.invalid"/>
+	<hr>
+	Form Value:
+	<pre>{{personForm.value | json}}</pre>
+	Form Status:
+	<pre>{{personForm.status | json}}</pre>
+	<hr/>
+	First Name: <pre>{{personForm.get('firstName').value}}</pre>
+	Status: <pre>{{personForm.get('firstName').status}}</pre>
+</form>
