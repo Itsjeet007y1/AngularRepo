@@ -1,2 +1,28 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<h1 style="color: green;">Welcome to {{ title }}!</h1>
+<div style="text-align: center">
+	<div style="color: green;">
+		<!-- <span appChangeText>Welcome to {{ title | uppercase}}!</span> <span>Date:
+			{{todaydate | date:'d/M/y'}}</span><br> <span>Date: {{todaydate
+			| date:'shortTime'}}</span><br> <span>Json Data: {{jsonvalue |
+			json }}</span> <br /> <b>Square root of 729 is: {{729 | sqrt}}</b> -->
+	</div>
+	<!-- <br /> <a routerLink="new-cmp">New component</a> <br /> <br /> -->
+	<!-- <router-outlet></router-outlet> -->
+
+	<!-- <p>Today's Date : {{todaydate}}</p> -->
+
+	<!-- <ul *ngFor="let data of httpdata1">
+		<li>Name : {{data.initiativeCD}} Address: {{data.intermediary}}</li>
+	</ul> -->
+	<p>Intermediary: {{httpdata1}}</p>
+	<p>Proposal Number: {{httpdata1?.initiativeCD}}</p>
+	<p>Intermediary: {{httpdata1?.intermediary}}</p>
+	<p>APD NO: {{httpdata1?.apdNo}}</p>
+	<p>Reference Personal Number: {{httpdata1?.refPersonalNumber}}</p>
+	<p>Home Country: {{httpdata1?.homeCountry}}</p>
+	<p>Traveling Country: {{httpdata1?.travellingCountry}}</p>
+	<p>Proposer Name: {{httpdata1?.proposerName}}</p>
+	<p>Proposal Date: {{httpdata1?.proposalDate}}</p>
+	<p>Proposal Number: {{httpdata1?.proposalNumber}}</p>
+	
+</div>
