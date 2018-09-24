@@ -1,2 +1,51 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<h1 style="color: green;">Welcome to {{ title }}!</h1>
+<div class="container">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h1>AMHI module data</h1>
+		</div>
+		<div class="panel-body">
+			<table class="table">
+				<tr>
+					<td>Intermediary:</td>
+					<td>{{httpdata1.intermediary}}</td>
+				</tr>
+				<tr>
+					<td>Proposal Number:</td>
+					<td>{{httpdata1?.initiativeCD}}</td>
+				</tr>
+				<tr>
+					<td>Intermediary:</td>
+					<td>{{httpdata1?.intermediary}}</td>
+				</tr>
+				<tr>
+					<td>APD NO:</td>
+					<td>{{httpdata1?.apdNo}}</td>
+				</tr>
+				<tr>
+					<td>Reference Personal Number:</td>
+					<td>{{httpdata1?.refPersonalNumber}}</td>
+				</tr>
+				<tr>
+					<td>Home Country:</td>
+					<td>{{httpdata1?.homeCountry}}</td>
+				</tr>
+				<tr>
+					<td>Traveling Country:</td>
+					<td>{{httpdata1?.travellingCountry}}</td>
+				</tr>
+				<tr>
+					<td>Proposer Name:</td>
+					<td>{{httpdata1?.proposerName}}</td>
+				</tr>
+				<tr>
+					<td>Proposal Date:</td>
+					<td>{{httpdata1?.proposalDate}}</td>
+				</tr>
+				<tr>
+					<td>Proposal Number:</td>
+					<td>{{httpdata1?.proposalNumber}}</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
