@@ -1,0 +1,14 @@
+<table class="table bordered responsive">
+	<tr>
+		<th>ID</th>
+		<th>Name</th>
+		<th>Salary</th>
+		<th>Date Of Joining</th>
+	</tr>
+	<tr *ngFor="let emp of employees">
+		<td>{{emp.id}}</td>
+		<td>{{emp.name}}</td>
+		<td>{{emp.salary}}</td>
+		<td>{{emp.dateOfJoining | date:'short'}}</td>
+	</tr>
+</table>
