@@ -1,0 +1,16 @@
+<table class = "table table-bordered">
+	<tr>
+		<th>Id</th>
+		<th>Name</th>
+		<th>Salary</th>
+		<th>Department</th>
+	</tr>
+	<tbody>
+		<tr *ngFor="let emp of emps">
+			<td>{{emp.empId}}</td>
+			<td>{{emp.empName}}</td>
+			<td>{{emp.empSal}}</td>
+			<td>{{emp.department.deptName}}</td>
+		</tr>
+	</tbody>
+</table>
