@@ -4,6 +4,7 @@
 		<th>Name</th>
 		<th>Salary</th>
 		<th>Department</th>
+		<th>Details</th>
 	</tr>
 	<tbody>
 		<tr *ngFor="let emp of emps">
@@ -11,6 +12,16 @@
 			<td>{{emp.empName}}</td>
 			<td>{{emp.empSal}}</td>
 			<td>{{emp.department.deptName}}</td>
+			<td><button [routerLink]="['/emp',emp.empId]">Details</button></td>
 		</tr>
 	</tbody>
 </table>
+<hr>
+<div *ngIf="selectedEmployee != null">
+<h4>Selected Employee Details</h4>
+<hr>
+	Emp Id: {{selectedEmployee.empId}} <br>
+	Emp Name: {{selectedEmployee.empName}} <br>
+	Salary: {{selectedEmployee.empSal}} <br>
+	Department: {{selectedEmployee.department.deptName}}
+</div>
